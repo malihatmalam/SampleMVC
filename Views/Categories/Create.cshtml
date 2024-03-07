@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>Create Category</h1>
+    <form method="post" action="/Categories/Create">
+        <div>
+            <label for="CategoryID">Category ID :</label>
+            <input type="text" id="CategoryID" name="CategoryID" placeholder="Insert category id ..">
+        </div>
+        <div>
+            <label for="CategoryName">Category Name :</label>
+            <input type="text" id="CategoryName" name="CategoryName" placeholder="Insert category name ..">
+        </div>
+        <div>
+            <input type="submit" value="Create">
+        </div>
+    </form>
+</body>
+</html>

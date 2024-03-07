@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@model SampleMVC.Models.Category
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <h1>Edit Category</h1>
+    <form method="post" action="/Categories/Update">
+        <div>
+            <label for="CategoryID">Category ID :</label>
+            <input type="text" id="CategoryID" name="CategoryID" value="@Model.categoryID" placeholder="Insert category id .." readonly>
+        </div>
+        <div>
+            <label for="CategoryName">Category Name :</label>
+            <input type="text" id="CategoryName" name="CategoryName" value="@Model.categoryName" placeholder="Insert category name ..">
+        </div>
+        <div>
+            <input type="submit" value="Update">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@{
+    if (ViewData["users"] == null)
+    {
+        ViewData["users"] = new List<SampleMVC.Models.User>();
+    }
+    var users = ViewData["users"] as List<SampleMVC.Models.User>;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Page</title>
+</head>
+<body>
+    
+    <h1>Categories Page</h1>
+    <form method="post" action="/Categories/Search">
+        <p>
+            <input type="text" id="search" name="search" placeholder="search category name" >
+            &nbsp;
+            <input type="submit" value="Search">
+        </p>
+    </form>
+    <a href="/Categories/Create">Tambah Kategori</a>
+    <table border="1">
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Action</th>
+        @foreach(var category in Model){
+            <tr>
+                <td>@category.categoryID</td>
+                <td>@category.categoryName</td>
+                <td>
+                    <a href="/Categories/Edit/@category.categoryID">edit</a>
+                    <a href="/Categories/Delete/@category.categoryID">delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <br>
+    <h1>User list</h1>
+    @foreach( var user in users){
+        <h3>@user.userID</h3>
+        <h3>@user.username</h3>
+        <h3>@user.password</h3>
+    }
+</body>
+</html>
